@@ -1,11 +1,57 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import SectionDos from "../components/SectionDos/SectionDos.astro";
+import SectionUno from "../components/SectionUno/SectionUno.astro";
+import Layout from "../layouts/Layout.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+	<SectionUno />
+	<SectionDos />
 </Layout>
+
+<style is:global>
+	@import url("https://fonts.googleapis.com/css2?family=TASA+Explorer:wght@400..800&display=swap");
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	body {
+		font-family: "TASA Explorer", sans-serif;
+	}
+	a{
+		text-decoration: none;
+	}
+	/* Contenedor principal */
+  .contenedor {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* max-width */
+  .max-width {
+    padding: 0 1rem;
+    max-width: 1400px;
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+  }
+  @media (max-width: 1200px) {
+    .contenedor{
+      justify-content: flex-start ;
+      align-items: stretch;
+      margin-top: 50px;
+    }
+    .max-width {
+      gap: 1rem;
+      flex-direction: column;
+      margin-top: 100px;
+    }
+  }
+</style>

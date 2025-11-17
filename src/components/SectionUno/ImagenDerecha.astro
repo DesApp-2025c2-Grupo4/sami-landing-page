@@ -1,0 +1,15 @@
+---
+import Image from "astro/components/Image.astro";
+import banner from "../../assets/banner.png";
+---
+
+<>
+  <Image src={banner} alt="Banner" class="banner" />
+</>
+<style>
+  .banner {
+    max-width: 750px;
+    width: 100%;
+    height: auto;
+  }
+</style>

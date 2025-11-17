@@ -1,0 +1,118 @@
+---
+import { navBarItems } from "../../constants/NavBarItems";
+import logoAzul from "../../assets/logo-azul.png";
+import { Image } from "astro:assets";
+import BtnHamburguesa from "../../assets/btn-hamburguesa.svg";
+---
+
+<header>
+  <div class="header-max-width">
+    <div class="contenedor-logo">
+      <Image src={logoAzul} alt="Logo de la empresa" class="logo" />
+    </div>
+    <nav class="contenedor-nav" id="nav">
+      <ul>
+        {navBarItems.map((i) => <li>{i.title}</li>)}
+      </ul>
+    </nav>
+    <div class="btn-hamburguesa" id="btn-hamburguesa">
+      <BtnHamburguesa />
+    </div>
+  </div>
+  <script src="/src/scripts/hamburguesa.js"></script>
+</header>
+
+<style>
+  /* Estilos de header */
+  header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    background-color: rgb(247, 247, 247);
+  }
+  /* Estilos de max width */
+  .header-max-width {
+    padding: 0 1rem;
+    max-width: 1400px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  /* Estilos del logo */
+  .logo {
+    width: 100px;
+    height: auto;
+  }
+  /* Estilos de nav */
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  li {
+    padding: 10px 20px;
+    font-size: calc(12px + 0.2vw);
+    transition: all ease 0.2s;
+    border-radius: 5px;
+    &:hover {
+      background-color: #ff6161;
+      cursor: pointer;
+      color: white;
+    }
+  }
+  /* Oculto btn hamburguesa */
+  .btn-hamburguesa {
+    display: none;
+    cursor: pointer;
+    margin-right: 1rem;
+    & svg {
+      fill: black;
+      width: 30px;
+      height: 50px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    nav {
+      display: none;
+    }
+    .btn-hamburguesa {
+      display: block;
+    }
+    .desplegar{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      background-color: rgba(253, 253, 253, 0.959);
+      z-index: -1;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: animarNavBar 0.5s linear;
+      & ul{
+        flex-direction: column;
+        align-items: center;
+        & li{
+          font-size: calc(20px + 0.2vw);
+        }
+      }
+    }
+  }
+  @keyframes animarNavBar {
+    0%{
+      transform: translateX(100%);
+    }100%{
+      transform: translateX(0);
+    }
+  }
+</style>

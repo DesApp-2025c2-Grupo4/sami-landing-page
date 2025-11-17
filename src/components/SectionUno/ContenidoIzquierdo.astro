@@ -1,0 +1,106 @@
+---
+import iconoLanzar from "../../assets/iconoLanzar.svg";
+---
+
+<aside>
+  <div>
+    <h3 class="primer-titulo">Administración al alcance de un click</h3>
+  </div>
+  <div class="segundo-titulo">
+    <h2>Sistema de Administración de medicina integral</h2>
+  </div>
+  <div>
+    <p class="parrafo">
+      Una plataforma completa diseñada para obras sociales y centros de salud
+      que quieren reducir errores, acelerar procesos y tener control total sobre
+      su información.
+    </p>
+  </div>
+  <div class="botones">
+    <a class="btn button-demo" href="https://sami-chi.vercel.app/" target="blank">
+      Probar Demo
+      <img src={iconoLanzar.src} alt="Icono lanzar" />
+    </a>
+    <p>o</p>
+    <button class="btn button-contactanos"> Contactanos </button>
+  </div>
+</aside>
+
+<style>
+  aside {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .primer-titulo {
+    display: inline;
+    padding: 10px;
+    background-color: #2ecc70a9;
+    border-radius: 10px 10px 0 10px;
+    font-size: calc(10px + 0.5vw);
+    color: white;
+    font-weight: 200;
+    border: 1px solid #a7ffcca9;
+  }
+  .segundo-titulo {
+    color: white;
+    font-size: calc(20px + 0.4vw);
+  }
+  .parrafo {
+    color: white;
+    letter-spacing: 1px;
+  }
+  .botones {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    p {
+      color: white;
+      font-size: calc(12px + 0.2vw);
+    }
+  }
+  .btn {
+    cursor: pointer;
+    height: 50px;
+    padding: 0 20px;
+    max-width: 200px;
+    border-radius: 10px;
+    font-size: calc(13px + 0.1vw);
+    font-weight: 600;
+    color: white;
+    transition: all ease 0.2s;
+  }
+  .button-demo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+    background-color: #ff6161;
+    border: 1px solid #ff8080;
+    &:hover {
+      background-color: #ff4c4c;
+    }
+  }
+  .button-contactanos {
+    border: 2px solid white;
+    background: none;
+    &:hover {
+      background-color: white;
+      color: #ff6161;
+    }
+  }
+  @media (max-width: 1200px) {
+    aside {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+    }
+    .segundo-titulo {
+      text-align: center;
+    }
+    .parrafo {
+      text-align: center;
+    }
+  }
+</style>
