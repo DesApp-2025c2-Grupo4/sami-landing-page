@@ -4,6 +4,10 @@ export const navBarItems = [
     path: '#inicio'
   },
   {
+    title:'Por qué elegirnos',
+    path:'#por-que-elegirnos'
+  },
+  {
     title: 'Beneficios',
     path: '#beneficio'
   },

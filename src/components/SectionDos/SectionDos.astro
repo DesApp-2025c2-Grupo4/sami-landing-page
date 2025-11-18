@@ -1,7 +1,91 @@
 ---
-
+import CardPorQueElegirnos from "../ui/CardPorQueElegirnos.astro";
+import SubtituloPrincipal from "../ui/SubtituloPrincipal.astro";
+import TituloPrincipal from "../ui/TituloPrincipal.astro";
+import TituloVerde from "../ui/TituloVerde.astro";
+import { listaPorqueElegirnos } from "../../constants/listPorQueElegirnos";
 ---
 
-<div class="contenedor">
-  <div class="max-width"></div>
+<div class="contenedor" id="por-que-elegirnos">
+  <div class="max-width">
+    <div class="titulo-inicial">
+      <div class="titulo-inicial-derecha">
+        <TituloVerde title="¿Por qué elegirnos?" />
+        <TituloPrincipal
+          texto="La Plataforma Médica Más Segura y Confiable para Administrar Tu Información en un Solo Lugar"
+        />
+      </div>
+      <SubtituloPrincipal
+        texto="Gestionar información médica es crítico. Por eso, nuestra plataforma está diseñada para garantizar seguridad, precisión y control total en cada proceso. Somos la opción más confiable para quienes necesitan administrar datos médicos sin margen de error."
+      />
+    </div>
+
+    <section>
+      {
+        listaPorqueElegirnos.map((ele, i) => (
+          <CardPorQueElegirnos
+            titulo={ele.titulo}
+            texto={ele.texto}
+            numero={i + 1}
+          />
+        ))
+      }
+    </section>
+  </div>
 </div>
+
+<style>
+  /* Estilos que coloco para el contenedor de todo el contenido */
+  .contenedor {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+  }
+  .max-width {
+    padding: 2rem 1rem;
+    border-radius: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+  /* Estilos de titulo inicial */
+  .titulo-inicial {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    & .titulo-inicial-derecha {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+  section {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  /* Mediaquery para el titulo */
+  @media (max-width: 750px) {
+    .contenedor{
+      margin-top: 20px;
+    }
+    .titulo-inicial {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      & .titulo-inicial-derecha {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+</style>

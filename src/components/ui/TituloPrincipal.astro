@@ -1,0 +1,20 @@
+---
+const { texto } = Astro.props
+---
+
+<h3>
+  { texto }
+</h3>
+
+<style>
+  h3{
+    font-size: calc(20px + 0.4vw);
+    color: #3498DB;
+    max-width: 600px;
+  }
+  @media (max-width: 750px) {
+    h3{
+      text-align: center;
+    }
+  }
+</style>

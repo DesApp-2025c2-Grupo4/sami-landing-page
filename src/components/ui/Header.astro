@@ -12,7 +12,7 @@ import BtnHamburguesa from "../../assets/btn-hamburguesa.svg";
     </div>
     <nav class="contenedor-nav" id="nav">
       <ul>
-        {navBarItems.map((i) => <li>{i.title}</li>)}
+        {navBarItems.map((i) => <li><a href={i.path}>{i.title}</a></li>)}
       </ul>
     </nav>
     <div class="btn-hamburguesa" id="btn-hamburguesa">
@@ -56,11 +56,12 @@ import BtnHamburguesa from "../../assets/btn-hamburguesa.svg";
     flex-direction: row;
     gap: 20px;
   }
-  li {
+  li a{
     padding: 10px 20px;
     font-size: calc(12px + 0.2vw);
     transition: all ease 0.2s;
     border-radius: 5px;
+    color: rgb(10, 10, 58);
     &:hover {
       background-color: #ff6161;
       cursor: pointer;
@@ -79,7 +80,7 @@ import BtnHamburguesa from "../../assets/btn-hamburguesa.svg";
     }
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 750px) {
     nav {
       display: none;
     }

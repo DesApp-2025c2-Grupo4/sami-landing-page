@@ -22,36 +22,27 @@ import Layout from "../layouts/Layout.astro";
 	}
 	body {
 		font-family: "TASA Explorer", sans-serif;
+		background-color: rgb(245, 245, 245);
 	}
-	a{
+	html {
+		scroll-behavior: smooth;
+	}
+	a {
 		text-decoration: none;
 	}
 	/* Contenedor principal */
-  .contenedor {
-    width: 100vw;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  /* max-width */
-  .max-width {
-    padding: 0 1rem;
-    max-width: 1400px;
-    display: flex;
-    align-items: center;
-    gap: 10rem;
-  }
-  @media (max-width: 1200px) {
-    .contenedor{
-      justify-content: flex-start ;
-      align-items: stretch;
-      margin-top: 50px;
-    }
-    .max-width {
-      gap: 1rem;
-      flex-direction: column;
-      margin-top: 100px;
-    }
-  }
+	.contenedor {
+		width: 100vw;
+		min-height: 100vh;
+	}
+	/* max-width */
+	.max-width {
+		max-width: 1400px;
+	}
+	/* Estilos para arreglar problema de scroll */
+	#inicio,
+	#por-que-elegirnos,
+	#contacto {
+		scroll-margin-top: 90px;
+	}
 </style>

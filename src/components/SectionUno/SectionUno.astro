@@ -1,18 +1,39 @@
 ---
-import FondoSectionUno from "./FondoSectionUno.astro";
 import ContenidoIzquierdo from "./ContenidoIzquierdo.astro";
 import ImagenDerecha from "./ImagenDerecha.astro";
 ---
 
-<div class="contenedor">
+<div class="contenedor" id="inicio">
   <div class="max-width">
     <!-- Fondo -->
-    <FondoSectionUno />
     <ContenidoIzquierdo />
     <ImagenDerecha />
   </div>
 </div>
 
 <style>
-  
+  .max-width {
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+    
+  }
+  .contenedor {
+    display: flex;
+    background-color: rgb(10, 10, 58);
+    justify-content: center;
+    align-items: center;
+  }
+  @media (max-width: 1200px) {
+    .contenedor {
+      justify-content: flex-start;
+      align-items: stretch;
+      margin-top: 50px;
+    }
+    .max-width {
+      gap: 1rem;
+      flex-direction: column;
+      margin-top: 100px;
+    }
+  }
 </style>

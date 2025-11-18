@@ -1,11 +1,10 @@
 ---
 import iconoLanzar from "../../assets/iconoLanzar.svg";
+import TituloVerde from "../ui/TituloVerde.astro";
 ---
 
 <aside>
-  <div>
-    <h3 class="primer-titulo">Administración al alcance de un click</h3>
-  </div>
+  <TituloVerde title="Administración al alcance de un click" />
   <div class="segundo-titulo">
     <h2>Sistema de Administración de medicina integral</h2>
   </div>
@@ -17,7 +16,11 @@ import iconoLanzar from "../../assets/iconoLanzar.svg";
     </p>
   </div>
   <div class="botones">
-    <a class="btn button-demo" href="https://sami-chi.vercel.app/" target="blank">
+    <a
+      class="btn button-demo"
+      href="https://sami-chi.vercel.app/"
+      target="blank"
+    >
       Probar Demo
       <img src={iconoLanzar.src} alt="Icono lanzar" />
     </a>
@@ -32,16 +35,7 @@ import iconoLanzar from "../../assets/iconoLanzar.svg";
     flex-direction: column;
     gap: 2rem;
   }
-  .primer-titulo {
-    display: inline;
-    padding: 10px;
-    background-color: #2ecc70a9;
-    border-radius: 10px 10px 0 10px;
-    font-size: calc(10px + 0.5vw);
-    color: white;
-    font-weight: 200;
-    border: 1px solid #a7ffcca9;
-  }
+
   .segundo-titulo {
     color: white;
     font-size: calc(20px + 0.4vw);
