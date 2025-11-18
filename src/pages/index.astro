@@ -1,5 +1,6 @@
 ---
 import SectionDos from "../components/SectionDos/SectionDos.astro";
+import SectionTres from "../components/SectionTres/SectionTres.astro";
 import SectionUno from "../components/SectionUno/SectionUno.astro";
 import Layout from "../layouts/Layout.astro";
 
@@ -10,6 +11,7 @@ import Layout from "../layouts/Layout.astro";
 <Layout>
 	<SectionUno />
 	<SectionDos />
+	<SectionTres />
 </Layout>
 
 <style is:global>
@@ -42,7 +44,15 @@ import Layout from "../layouts/Layout.astro";
 	/* Estilos para arreglar problema de scroll */
 	#inicio,
 	#por-que-elegirnos,
-	#contacto {
+	#contacto,
+	#beneficios {
 		scroll-margin-top: 90px;
+	}
+	ul{
+		list-style: none;
+		& li{
+			margin: 0;
+			padding: 0;
+		}
 	}
 </style>

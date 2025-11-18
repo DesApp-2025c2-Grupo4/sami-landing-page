@@ -1,0 +1,70 @@
+---
+import { listaBeneficios } from "../../constants/listaBeneficios";
+import CardBeneficio from "../ui/CardBeneficio.astro";
+import TituloPrincipal from "../ui/TituloPrincipal.astro";
+import TituloVerde from "../ui/TituloVerde.astro";
+---
+
+<div class="contenedor" id="beneficios">
+  <div class="max-width">
+    <div class="titulo-principal">
+      <TituloVerde title="Beneficios" />
+      <TituloPrincipal
+        texto="Funciones diseñadas para hacer tu administración más simple y eficiente"
+      />
+    </div>
+    <section>
+      {
+        listaBeneficios.map(b=>
+          <CardBeneficio
+            titulo={b.titulo}
+            subtitulo={b.subtitulo}
+            listaCheckeds={b.listaElementos}
+            imagen={b.imagen}
+          />
+        )
+      }
+    </section>
+  </div>
+</div>
+
+<style>
+  .contenedor {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+  }
+  .max-width {
+    padding: 2rem 1rem;
+    border-radius: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 3rem;
+  }
+  .titulo-principal{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-end;
+    text-align: right;
+  }
+  section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  @media (max-width: 750px) {
+    .titulo-principal{
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+    }
+    .max-width{
+      gap: 1rem;
+    }
+  }
+</style>

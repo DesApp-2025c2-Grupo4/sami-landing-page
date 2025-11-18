@@ -9,11 +9,11 @@ export const navBarItems = [
   },
   {
     title: 'Beneficios',
-    path: '#beneficio'
+    path: '#beneficios'
   },
   {
     title: 'Opiniones',
-    path: '#Opiniones'
+    path: '#opiniones'
   },
   {
     title: 'Contacto',
