@@ -1,6 +1,6 @@
 import afiliados from '../assets/iconos-beneficios/afiliados.png'
-import agenda from '../assets/iconos-beneficios/agenda.png'
-import gestionarprestadores from '../assets/iconos-beneficios/gestionarprestadores.png'
+import gestionarAgenda from '../assets/iconos-beneficios/gestionarAgenda.png'
+import gestionprestadores from '../assets/iconos-beneficios/gestionprestadores.png'
 import reportes from '../assets/iconos-beneficios/reportes.png'
 import seguridad from '../assets/iconos-beneficios/seguridad.png'
 import busqueda from '../assets/iconos-beneficios/busqueda.png'
@@ -25,7 +25,7 @@ export const listaBeneficios = [
       "Controlá lugares de atención.",
       "Configurá horarios de trabajo."
     ],
-    imagen:gestionarprestadores
+    imagen:gestionprestadores
   },
   {
     titulo: "Agendas de turnos inteligentes",
@@ -36,7 +36,7 @@ export const listaBeneficios = [
       "Seleccioná lugares de atención.",
       "Todo validado automáticamente."
     ],
-    imagen:agenda
+    imagen:gestionarAgenda
   },
   {
     titulo: "Buscadores avanzados",
