@@ -1,6 +1,5 @@
 const secciones = document.querySelectorAll("div[id]")   // <-- ahora usa divs
 const links = document.querySelectorAll("nav a[data-section]")
-console.log('Paso por aca')
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -15,7 +14,7 @@ const observer = new IntersectionObserver(
     })
   },
   {
-    threshold: 0.5, // 50% visible
+    threshold: 0.2,
   }
 )
 
