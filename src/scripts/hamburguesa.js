@@ -11,4 +11,5 @@ btnHamburguesa?.addEventListener('click', () => {
 
 navBar.addEventListener('click',()=>{
   navBar?.classList.remove('desplegar')
+  document.body.style.overflow = 'auto' 
 })
