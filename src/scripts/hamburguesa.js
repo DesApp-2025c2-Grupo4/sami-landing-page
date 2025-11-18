@@ -1,5 +1,14 @@
 const navBar = document.getElementById('nav')
 const btnHamburguesa = document.getElementById('btn-hamburguesa')
 btnHamburguesa?.addEventListener('click', () => {
-  navBar?.classList.toggle('desplegar')
+  const estaDesplegado = navBar?.classList.toggle('desplegar')
+  if(estaDesplegado){
+    document.body.style.overflow = 'hidden' 
+  }else{
+    document.body.style.overflow = 'auto' 
+  }
+})
+
+navBar.addEventListener('click',()=>{
+  navBar?.classList.remove('desplegar')
 })
