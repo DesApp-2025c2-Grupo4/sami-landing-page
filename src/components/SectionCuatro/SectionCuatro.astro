@@ -1,0 +1,66 @@
+---
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import CardOpiniones from "../ui/CardOpiniones.astro";
+import TituloVerde from "../ui/TituloVerde.astro";
+import TituloPrincipal from "../ui/TituloPrincipal.astro";
+import { listaDeResenias } from "../../constants/listaDeResenias.js";
+---
+
+<div class="contenedor" id="opiniones">
+  <div class="max-width">
+    <div class="titulo">
+      <TituloVerde title="Opiniones" />
+      <TituloPrincipal
+        texto="Resultados reales: opiniones y reseñas de quienes utilizan SAMI en su día a día"
+      />
+    </div>
+    <section class="swiper" id="mySwiper">
+      <div class="swiper-wrapper">
+        {
+          listaDeResenias.map((r, i) => (
+            <div class="swiper-slide">
+              <CardOpiniones resenia={r} key={i} />
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- Botones de carrousel -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </section>
+  </div>
+  <script src="../../scripts/carousel.js"></script>
+</div>
+
+<style>
+  .contenedor {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    min-height: auto !important;
+  }
+  .max-width {
+    width: 100%;
+    padding: 1rem;
+  }
+  .titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+  section {
+    margin-top: 5rem;
+    width: 100%;
+    padding-bottom: 4rem;
+  }
+  .swiper-slide{
+    display: flex;
+    justify-content: center;
+  }
+</style>

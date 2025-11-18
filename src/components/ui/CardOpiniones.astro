@@ -1,0 +1,66 @@
+---
+import Image from "astro/components/Image.astro"
+import afiliado from '../../assets/iconos-beneficios/afiliados.png'
+const {resenia} = Astro.props
+---
+
+<article>
+  <i>
+    <bold>“</bold>
+    {resenia.resenia}
+  </i>
+  <div class="avatar">
+    <div class="avatar-container">
+      <Image src={afiliado} alt="Avatar" width={20} height={20}/>
+    </div>
+    <div class="aside-avatar">
+      <h3>{resenia.autor}</h3>
+      <p>{resenia.institucion}</p>
+    </div>
+  </div>
+</article>
+
+<style>
+  article{
+    flex: 1;
+    max-width: 300px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  i{
+    text-align: center;
+    font-size: calc(12px + 0.2vw);
+  }
+  bold{
+    font-size: 20px;
+    font-weight: 800;
+    color: #3498DB;
+  }
+  .avatar-container{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00568f;
+    border-radius: 50%;
+  }
+  .avatar{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .aside-avatar{
+    & h3{
+      font-size: calc(12px + 0.3vw);
+      color: #00568f;
+    }
+    & p{
+      font-size: calc(10px + 0.2vw);
+      text-decoration: underline;
+    }
+  }
+</style>
