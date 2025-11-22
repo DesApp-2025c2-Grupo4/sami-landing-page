@@ -19,7 +19,7 @@ import TituloVerde from "../ui/TituloVerde.astro";
   <div class="botones">
     <ButtonDemo />
     <p>o</p>
-    <button class="btn button-contactanos"> Contactanos </button>
+    <a class="btn button-contactanos" href="#contacto"> Contactanos </a>
   </div>
 </aside>
 
@@ -76,6 +76,11 @@ import TituloVerde from "../ui/TituloVerde.astro";
       background-color: white;
       color: #ff6161;
     }
+  }
+  a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   @media (max-width: 1200px) {
     aside {
