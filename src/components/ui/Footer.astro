@@ -1,0 +1,145 @@
+---
+import Image from "astro/components/Image.astro";
+import logo from "../../assets/logo-azul.png";
+import { navBarItems } from "../../constants/NavBarItems";
+import ButtonDemo from "./ButtonDemo.astro";
+---
+
+<footer>
+  <div class="container-max">
+    <div class="container-principal">
+      <div class="derecha">
+        <a href="#inicio">
+          <Image src={logo} alt={"Logo"} />
+        </a>
+
+        <div class="footer-suscribirse">
+          <input type="email" placeholder="Email" />
+          <button>Suscribirte</button>
+        </div>
+        <ButtonDemo />
+        <div class="footer-redes"></div>
+      </div>
+      <div class="izquierda">
+        <div>
+          <h3 class="titulos">Enlaces rápidos</h3>
+          <ul>
+            {
+              navBarItems.map((i) => (
+                <li>
+                  <a href={i.path}>{i.title}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="divisor">
+
+    </div>
+    <div class="footer-final">
+      <p class="copi">© 2025 Todos los derechos reservados.</p>
+      <p class="autor">Desarrollado por <a href=""></a></p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 300px;
+    padding: 40px 10px;
+  }
+  .container-max {
+    max-width: 1400px;
+    width: 100%;
+  }
+  .divisor{
+    height: 1px;
+    width: 100%;
+    margin-top: 40px;
+    background-color: rgba(0, 0, 0, 0.068);
+  }
+  .container-principal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+  }
+  /* Contenido de la derecha del foote */
+  .derecha {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  a img {
+    /* Logo */
+    width: 150px;
+    height: auto;
+  }
+  .footer-suscribirse {
+    & input {
+      width: 300px;
+      height: 40px;
+      padding-left: 10px;
+      border-radius: 10px;
+      border: 1px solid #73bae9;
+      background-color: #ffffff00;
+      &:focus {
+        outline: none;
+        border-color: #3498db;
+      }
+    }
+    & button {
+      height: 40px;
+      padding: 0 20px;
+      border-radius: 10px;
+      border: 1px solid #73bae9;
+      color: #5a9cc9;
+      font-weight: 600;
+      background-color: #ffffff00;
+      cursor: pointer;
+    }
+  }
+  .izquierda {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    .titulos {
+      color: #348ac4;
+    }
+    ul li a {
+      color: #3498db;
+      font-size: calc(10px + 0.2vw);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .footer-final{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 20px 0px 0 0;
+    & p{
+      font-size: calc(10px + 00.2vw);
+      color: rgba(0, 0, 0, 0.281);
+    }
+  }
+  @media (max-width:700px) {
+    footer{
+      margin-top: 20px;
+    }
+    .container-principal{
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .derecha{
+      justify-content: flex-start;
+    }
+  }
+</style>

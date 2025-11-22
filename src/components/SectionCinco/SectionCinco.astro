@@ -1,0 +1,142 @@
+---
+import TituloVerde from "../ui/TituloVerde.astro";
+---
+
+<div class="contenedor" id="contacto">
+  <div class="max-width">
+    <TituloVerde title="Contactanos" />
+    <form>
+      <div class="form-datos-row">
+        <div class="form-dato">
+          <label for="nombre">Nombre <span>*</span></label>
+          <input
+            type="text"
+            placeholder="Carlos"
+            name="nombre"
+            required
+            class="input"
+            id="name"
+          />
+        </div>
+        <div class="form-dato">
+          <label for="apellido"> Apellido <span>*</span></label>
+          <input
+            type="text"
+            placeholder="apellido"
+            name="apellido"
+            required
+            class="input"
+            id="apellido"
+          />
+        </div>
+      </div>
+      <div class="form-datos-row">
+        <div class="form-dato">
+          <label for="email">Email <span>*</span></label>
+          <input
+            type="email"
+            placeholder="email@gmail.com"
+            required
+            class="input"
+            name="email"
+            id="email"
+          />
+        </div>
+        <div class="form-dato">
+          <label for="asunto">Asunto <span>*</span></label>
+          <select id="asunto" name="asunto" class="input">
+            <option value="precios">Precios</option>
+            <option value="detalles">Detalles</option>
+            <option value="otro">Otra consulta</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label for="descripcion">Mensaje <span>*</span></label>
+        <textarea name="descripcion" id="descripcion" class="input" ></textarea>
+      </div>
+      <button type="submit" class="input btn">Enviar</button>
+    </form>
+  </div>
+</div>
+
+<style>
+  .contenedor {
+    margin-top: 100px;
+    padding: 4rem 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: rgb(10, 10, 58);
+  }
+  .max-width {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    padding: 0 10px;
+  }
+  form {
+    margin-top: 2rem;
+    background-color: rgb(252, 252, 252);
+    padding: 2rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .form-datos-row {
+    display: flex;
+    gap: 1rem;
+  }
+  .form-dato {
+    display: flex;
+    flex-direction: column;
+  }
+  .input {
+    height: 40px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid rgba(10, 10, 58, 0.103);
+    padding-left: 10px;
+    &:focus{
+      border: 1px solid rgba(10, 10, 58, 0.295);
+      outline: none;
+    }
+  }
+  select {
+    color: rgb(112, 112, 112);
+  }
+  textarea{
+    resize: none;
+    min-height: 80px;
+    padding: 10px 0;
+  }
+  label{
+    font-size: calc(12px + 0.2vw);
+    color: rgb(70, 70, 70);
+    & span{
+      font-weight: 400;
+      color: #ff6161;
+    }
+  }
+  .btn{
+    background-color: #ff6161 ;
+    border-color: #ff3d3d;
+    color: white;
+    cursor: pointer;
+    transition: all ease .2s;
+    &:hover{
+      background-color: #ff4747 ;
+    }
+  }
+  @media (max-width:500px) {
+    form{
+      width: 100%;
+    }
+    .form-datos-row{
+      flex-direction: column;
+    }
+  }
+</style>

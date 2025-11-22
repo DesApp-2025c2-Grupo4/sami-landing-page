@@ -1,0 +1,33 @@
+---
+import iconoLanzar from "../../assets/iconoLanzar.svg";
+---
+
+<a class="btn button-demo" href="https://sami-chi.vercel.app/" target="blank">
+  Probar Demo
+  <img src={iconoLanzar.src} alt="Icono lanzar" />
+</a>
+
+<style>
+  .btn {
+    cursor: pointer;
+    height: 50px;
+    padding: 0 20px;
+    max-width: 200px;
+    border-radius: 10px;
+    font-size: calc(13px + 0.1vw);
+    font-weight: 600;
+    color: white;
+    transition: all ease 0.2s;
+  }
+  .button-demo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+    background-color: #ff6161;
+    border: 1px solid #ff8080;
+    &:hover {
+      background-color: #ff4c4c;
+    }
+  }
+</style>

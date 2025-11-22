@@ -1,5 +1,6 @@
 ---
 import iconoLanzar from "../../assets/iconoLanzar.svg";
+import ButtonDemo from "../ui/ButtonDemo.astro";
 import TituloVerde from "../ui/TituloVerde.astro";
 ---
 
@@ -16,14 +17,7 @@ import TituloVerde from "../ui/TituloVerde.astro";
     </p>
   </div>
   <div class="botones">
-    <a
-      class="btn button-demo"
-      href="https://sami-chi.vercel.app/"
-      target="blank"
-    >
-      Probar Demo
-      <img src={iconoLanzar.src} alt="Icono lanzar" />
-    </a>
+    <ButtonDemo />
     <p>o</p>
     <button class="btn button-contactanos"> Contactanos </button>
   </div>
